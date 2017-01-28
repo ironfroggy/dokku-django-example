@@ -26,8 +26,6 @@ SECRET_KEY = '&62#27^wh7igil1*)dyoh%-s!a-v4q^a(*(n*wz4$0-!n-$wr7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
-
 ALLOWED_HOSTS = []
 
 
@@ -74,6 +72,28 @@ DATABASES = {
         'PASSWORD': os.environ['DOKKU_POSTGRES_%s_ENV_POSTGRES_PASSWORD' % DOKKU_DB_NAME.replace('-', '_').upper()],
     }
 }
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+        'DIRS': [
+            #os.path.join(PROJECT_DIR, 'templates'),
+        ],
+        'OPTIONS': {
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.request',
+            ],
+            'debug': DEBUG,
+        },
+    },
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
