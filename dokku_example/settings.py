@@ -67,7 +67,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'HOST': 'dokku-postgres-dde-db',
-        'NAME': 'dde-db',
+        'NAME': 'dde_db',
         'USER': 'postgres',
         'PASSWORD': os.environ['DOKKU_POSTGRES_DDE_DB_ENV_POSTGRES_PASSWORD'],
     }
