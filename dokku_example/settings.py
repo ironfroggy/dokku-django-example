@@ -63,13 +63,15 @@ WSGI_APPLICATION = 'dokku_example.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
+DOKKU_DB_NAME = 'dde-db'
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'dokku-postgres-dde-db',
-        'NAME': 'dde_db',
+        'HOST': 'dokku-postgres-' + DOKKU_DB_NAME,
+        'NAME': DOKKU_DB_NAME.replace('-', '_'),
         'USER': 'postgres',
-        'PASSWORD': os.environ['DOKKU_POSTGRES_DDE_DB_ENV_POSTGRES_PASSWORD'],
+        'PASSWORD': os.environ['DOKKU_POSTGRES_%s_ENV_POSTGRES_PASSWORD' % DOKKU_DB_NAME.replace('-', '_').upper()],
     }
 }
 
