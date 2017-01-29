@@ -39,7 +39,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djcelery',
-    'kombu.transport.django',
     'gunicorn',
     'fibonacci',
 )
