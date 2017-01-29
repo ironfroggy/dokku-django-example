@@ -26,7 +26,9 @@ SECRET_KEY = '&62#27^wh7igil1*)dyoh%-s!a-v4q^a(*(n*wz4$0-!n-$wr7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'django-example.ironfroggy.com',
+]
 
 
 # Application definition
