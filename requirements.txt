@@ -1,7 +1,7 @@
 Django==1.10
 amqp==2.1.4
 anyjson==0.3.3
-billiard<3.4,>=3.3.0.10
+billiard==3.5
 celery==4.0.2
 django-celery==3.1.17
 gunicorn==18.0
