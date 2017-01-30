@@ -123,7 +123,6 @@ import djcelery
 djcelery.setup_loader()
 
 CELERY_RESULT_BACKEND='djcelery.backends.database:DatabaseBackend'
-CELERY_RESULT_BACKEND='djcelery.backends.cache:CacheBackend'
 CELERY_SEND_TASK_ERROR_EMAILS = True
 
 BROKER_URL = 'django://'
