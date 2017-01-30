@@ -42,7 +42,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'djcelery',
     'gunicorn',
-    'fibonacci',
+    
+    'count',
 )
 
 MIDDLEWARE_CLASSES = (
