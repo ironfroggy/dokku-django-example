@@ -1,0 +1,16 @@
+{
+  "name": "Dokku Django Example",
+  "description": "A template for getting started with the popular Django framework.",
+  "website": "http://www.djangoproject.com",
+  "repository": "https://github.com/heroku/ruby-rails-sample",
+  "logo": "",
+  "scripts": {
+    "dokku": {
+      "postdeploy": "python manage.py migrate"
+    }
+  },
+  "env": {
+
+  },
+  "addons": ["heroku-postgresql"]
+}

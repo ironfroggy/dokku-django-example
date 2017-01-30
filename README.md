@@ -1,4 +1,4 @@
-Example of a (modern?) Django project deployed heroku style
+Example of a modern Django 1.10 project deployed heroku style
 using dokku.
 
 You can try it with the dokku installation in the vagrant machine as
@@ -57,6 +57,9 @@ Now the application should be published under a subdomain like
 remember that the subdomain is hardcoded into the Vagrantfile and that
 the virtual machine has forwarded the port 80 to the port 8080.
 
+MANAGEMENT
+----------
+
 It is also possible to execute dokku command directly using ssh, for example
 
     $ ssh -t dokku@vagrant logs <name>
@@ -66,13 +69,9 @@ It is also possible to execute dokku command directly using ssh, for example
     2013-12-05 15:58:23 [16] [INFO] Booting worker with pid: 16
     Connection to 127.0.0.1 closed.
 
-Dokku use only the ``web`` voice into the ``Procfile``, if you want an approach
-like ``heroku`` you can use ``dokku-shoreman``.
+You can run management commands for Django as well.
 
-Furthemore ``celery`` complains about running it as root, so to make it works you
-have to configure the ``C_FORCE_ROOT`` environment variable:
-
-    $ ssh -t dokku@vagrant config:set elipse C_FORCE_ROOT=1
+    $ ssh -t dokku@vagrant -- run <name> python manage.py <command>
 
 LOCAL DEVELOPMENT
 -----------------
